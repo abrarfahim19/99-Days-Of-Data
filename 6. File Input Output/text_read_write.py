@@ -1,6 +1,6 @@
 import csv
 
-with open('students.csv') as file:
-    lines = csv.DictReader(file)
+with open('some_text.txt') as file:
+    lines = file.readlines()
     for row in lines:
-        print(row)
+        print(row.rstrip())
