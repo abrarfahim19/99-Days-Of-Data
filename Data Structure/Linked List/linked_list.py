@@ -21,8 +21,7 @@ class LinkedList:
         print(llstr)
 
     def insert_at_begining(self, data):
-        node = Node(data, self.head)
-        self.head = node
+        self.head = Node(data, self.head)
 
     def insert_at_end(self, data):
         if self.head is None:
@@ -34,10 +33,17 @@ class LinkedList:
 
         itr.next = Node(data, None)
 
+    def insert_values(self, data_list):
+        self.head = None
+        for data in data_list:
+            self.insert_at_end(data)
+
 
 if __name__ == "__main__":
     ll = LinkedList()
-    ll.insert_at_begining(10)
-    ll.insert_at_begining(12)
-    ll.insert_at_end(2)
+    # ll.insert_at_begining(10)
+    # ll.insert_at_begining(12)
+    # ll.insert_at_begining(1)
+    # ll.insert_at_end(2)
+    ll.insert_values(["Pear", "Coconut"])
     ll.print()
