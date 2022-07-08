@@ -16,7 +16,7 @@ class LinkedList:
         itr = self.head
         llstr = ""
         while itr:
-            llstr += str(itr.data) + " ==> "
+            llstr += str(itr.data) + " ==> " if itr.next else str(itr.data)
             itr = itr.next
         print(llstr)
 
@@ -26,6 +26,7 @@ class LinkedList:
     def insert_at_end(self, data):
         if self.head is None:
             self.head = Node(data, None)
+            return
 
         itr = self.head
         while itr.next:
